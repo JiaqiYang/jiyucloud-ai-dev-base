@@ -4,3 +4,5 @@ dist
 build
 coverage
 *.log
+src/database/*.db
+uploads/
