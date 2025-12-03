@@ -1,0 +1,74 @@
+{
+  "env": {
+    "es2022": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "standard",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["jsdoc"],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "script"
+  },
+  "rules": {
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-console": ["off"],
+    
+    "curly": ["error", "all"],
+    "eqeqeq": ["error", "always"],
+    "prefer-template": "warn",
+    "camelcase": "off",
+    "jsdoc/check-alignment": "off",
+    "jsdoc/check-param-names": "off",
+    "jsdoc/check-tag-names": "off",
+    "jsdoc/check-types": "off",
+    "jsdoc/require-jsdoc": "off",
+    "jsdoc/require-param": "off",
+    "jsdoc/require-returns": "off"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "logs/",
+    "**/*.json",
+    "uploads/",
+    "ecosystem.config.js",
+    "src/__tests__/",
+    "src/scripts/"
+  ]
+  ,
+  "overrides": [
+    {
+      "files": [
+        "src/controllers/**/*.js",
+        "src/services/**/*.js",
+        "src/repositories/**/*.js",
+        "src/middlewares/**/*.js",
+        "src/models/**/*.js",
+        "src/utils/**/*.js",
+        "src/routes/**/*.js"
+      ],
+      "rules": {
+        "jsdoc/check-alignment": "error",
+        "jsdoc/check-param-names": "error",
+        "jsdoc/check-tag-names": "error",
+        "jsdoc/check-types": "error",
+        "jsdoc/require-jsdoc": [
+          "error",
+          {
+            "publicOnly": false,
+            "require": {
+              "FunctionDeclaration": true,
+              "ClassDeclaration": true,
+              "MethodDefinition": false
+            }
+          }
+        ],
+        "jsdoc/require-param": "error",
+        "jsdoc/require-returns": "error"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "db:drop-unused": "node src/scripts/drop-unused-tables.js",
+    "lint": "eslint src --ext .js --max-warnings=0",
+    "lint:fix": "eslint src --ext .js --fix",
+    "format": "prettier --write \"src/**/*.js\"",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:restart": "pm2 restart ecosystem.config.js",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:delete": "pm2 delete ecosystem.config.js",
+    "pm2:logs": "pm2 logs cemetery-backend",
+    "pm2:monit": "pm2 monit",
+    "pm2:status": "pm2 status",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "ip2region": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "png-to-ico": "^3.0.1",
+    "sequelize": "^6.37.7",
+    "sharp": "^0.34.5",
+    "sqlite3": "^5.1.7",
+    "svg-captcha": "^1.4.0",
+    "swagger-ui-express": "^5.0.0",
+    "ws": "^8.18.0",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@types/jest": "^30.0.0",
+    "artillery": "^2.0.27",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^50.2.4",
+    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^9.1.4",
+    "jest": "^30.2.0",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "supertest": "^7.1.4"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

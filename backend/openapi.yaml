@@ -1,0 +1,756 @@
+openapi: 3.0.3
+info:
+  title: Gongmu Backend API
+  version: 1.0.0
+  description: 统一规范的后端接口文档
+tags:
+  - name: Auth
+  - name: Permissions
+  - name: Roles
+  - name: Departments
+  - name: Users
+  - name: Menus
+servers:
+  - url: http://localhost:3000/api
+paths:
+  /auth/login:
+    post:
+      summary: 用户登录
+      tags: [Auth]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: 登录成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '401':
+          description: 认证失败
+  /auth/me:
+    get:
+      summary: 获取当前用户信息
+      tags: [Auth]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /permissions:
+    get:
+      summary: 权限列表（分组）
+      tags: [Permissions]
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /roles:
+    get:
+      summary: 角色列表
+      tags: [Roles]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    post:
+      summary: 创建角色
+      tags: [Roles]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleCreate'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /roles/{id}:
+    put:
+      summary: 更新角色
+      tags: [Roles]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleUpdate'
+      responses:
+        '200':
+          description: 成功
+    delete:
+      summary: 删除角色
+      tags: [Roles]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 成功
+  /public/menus/definitions:
+    get:
+      summary: 公开菜单定义列表
+      tags: [Menus]
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /menus:
+    get:
+      summary: 菜单列表（管理）
+      tags: [Menus]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    post:
+      summary: 创建菜单
+      tags: [Menus]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MenuCreate'
+      responses:
+        '200':
+          description: 成功
+  /menus/{id}:
+    put:
+      summary: 更新菜单
+      tags: [Menus]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MenuUpdate'
+      responses:
+        '200':
+          description: 成功
+    delete:
+      summary: 删除菜单
+      tags: [Menus]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 成功
+  /menus/tree:
+    get:
+      summary: 菜单树结构
+      tags: [Menus]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /menus/enabled/top:
+    get:
+      summary: 当前角色可见的一级菜单
+      tags: [Menus]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /menus/enabled/children/{parentKey}:
+    get:
+      summary: 指定目录下当前角色可见的二级菜单
+      tags: [Menus]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: parentKey
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /menus/config/{roleCode}:
+    get:
+      summary: 获取角色菜单配置
+      tags: [Menus]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: roleCode
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+    post:
+      summary: 设置角色菜单配置
+      tags: [Menus]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: roleCode
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleSetMenuKeys'
+      responses:
+        '200':
+          description: 成功
+  /roles/{id}/permissions:
+    get:
+      summary: 获取角色权限ID列表
+      tags: [Roles]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 成功
+    post:
+      summary: 设置角色权限
+      tags: [Roles]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleSetPermissions'
+      responses:
+        '200':
+          description: 成功
+  /departments/tree:
+    get:
+      summary: 部门树
+      tags: [Departments]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /notifications:
+    get:
+      summary: 系统通知列表
+      tags: [Permissions]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /users:
+    get:
+      summary: 用户列表
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    ApiResponse:
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+      data:
+        nullable: true
+    RoleCreate:
+      type: object
+      properties:
+        role_name:
+          type: string
+        role_code:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+    RoleUpdate:
+      type: object
+      properties:
+        role_name:
+          type: string
+        role_code:
+          type: string
+        description:
+          type: string
+        status:
+          type: string
+    RoleSetPermissions:
+      type: object
+      properties:
+        permissionIds:
+          type: array
+          items:
+            type: integer
+    DepartmentCreate:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+        parent_id:
+          type: integer
+        status:
+          type: string
+    DepartmentUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+        parent_id:
+          type: integer
+        status:
+          type: string
+    NotificationCreate:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        priority:
+          type: string
+        status:
+          type: string
+        start_time:
+          type: string
+          format: date-time
+        end_time:
+          type: string
+          format: date-time
+        department_ids:
+          type: array
+          items:
+            type: integer
+    NotificationUpdate:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        priority:
+          type: string
+        status:
+          type: string
+        start_time:
+          type: string
+          format: date-time
+        end_time:
+          type: string
+          format: date-time
+        department_ids:
+          type: array
+          items:
+            type: integer
+    UserCreate:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        real_name:
+          type: string
+        role_id:
+          type: integer
+        phone:
+          type: string
+        email:
+          type: string
+        department:
+          type: string
+        department_id:
+          type: integer
+        avatar:
+          type: string
+        status:
+          type: string
+    UserUpdate:
+      type: object
+      properties:
+        real_name:
+          type: string
+        role_id:
+          type: integer
+        phone:
+          type: string
+        email:
+          type: string
+        department:
+          type: string
+        department_id:
+          type: integer
+        avatar:
+          type: string
+        status:
+          type: string
+        password:
+          type: string
+    MenuCreate:
+      type: object
+      properties:
+        key:
+          type: string
+        title:
+          type: string
+        path:
+          type: string
+        parent_id:
+          type: integer
+        type:
+          type: string
+        permission_code:
+          type: string
+        icon:
+          type: string
+        order_no:
+          type: integer
+        status:
+          type: string
+        component:
+          type: string
+    MenuUpdate:
+      type: object
+      properties:
+        title:
+          type: string
+        path:
+          type: string
+        parent_id:
+          type: integer
+        type:
+          type: string
+        permission_code:
+          type: string
+        icon:
+          type: string
+        order_no:
+          type: integer
+        status:
+          type: string
+        component:
+          type: string
+    RoleSetMenuKeys:
+      type: object
+      properties:
+        keys:
+          type: array
+          items:
+            type: string
+  /departments:
+    post:
+      summary: 创建部门
+      tags: [Departments]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DepartmentCreate'
+      responses:
+        '200':
+          description: 成功
+  /departments/{id}:
+    put:
+      summary: 更新部门
+      tags: [Departments]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DepartmentUpdate'
+      responses:
+        '200':
+          description: 成功
+    delete:
+      summary: 删除部门
+      tags: [Departments]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 成功
+  /departments/{id}/status:
+    put:
+      summary: 变更部门状态
+      tags: [Departments]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+      responses:
+        '200':
+          description: 成功
+    post:
+      summary: 创建通知
+      tags: [Permissions]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationCreate'
+      responses:
+        '200':
+          description: 成功
+  /notifications/{id}:
+    put:
+      summary: 更新通知
+      tags: [Permissions]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationUpdate'
+      responses:
+        '200':
+          description: 成功
+    delete:
+      summary: 删除通知
+      tags: [Permissions]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 成功
+  /notifications/batch-delete:
+    post:
+      summary: 批量删除通知
+      tags: [Permissions]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: integer
+      responses:
+        '200':
+          description: 成功
+    post:
+      summary: 创建用户
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+      responses:
+        '200':
+          description: 成功
+  /users/{id}:
+    put:
+      summary: 更新用户
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserUpdate'
+      responses:
+        '200':
+          description: 成功
+    delete:
+      summary: 删除用户
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 成功

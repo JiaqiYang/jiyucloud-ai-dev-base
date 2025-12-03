@@ -1,0 +1,8 @@
+node_modules/
+logs/
+**/*.json
+uploads/
+dist/
+coverage/
+src/scripts/test-api.js
+src/services/notificationHub.js

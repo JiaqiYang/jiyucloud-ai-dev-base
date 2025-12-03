@@ -1,0 +1,119 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    # 预热阶段
+    - duration: 30
+      arrivalRate: 5
+      name: "预热阶段"
+    # 正常负载
+    - duration: 60
+      arrivalRate: 20
+      name: "正常负载"
+    # 高负载
+    - duration: 60
+      arrivalRate: 50
+      name: "高负载"
+    # 峰值负载
+    - duration: 30
+      arrivalRate: 100
+      name: "峰值负载"
+  processor: "./src/scripts/load-test-processor.js"
+
+scenarios:
+  # 场景1: 用户登录
+  - name: "用户登录"
+    weight: 10
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "admin"
+            password: "admin123"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+
+  # 场景2: 获取墓位列表（高频操作）
+  - name: "获取墓位列表"
+    weight: 30
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "admin"
+            password: "admin123"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      - get:
+          url: "/api/cemetery-plots?page={{ $randomNumber(1, 100) }}&pageSize=20"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+
+  # 场景3: 获取客户列表
+  - name: "获取客户列表"
+    weight: 20
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "admin"
+            password: "admin123"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      - get:
+          url: "/api/customers?page={{ $randomNumber(1, 50) }}&pageSize=20"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+
+  # 场景4: 获取订单列表
+  - name: "获取订单列表"
+    weight: 20
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "admin"
+            password: "admin123"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      - get:
+          url: "/api/orders?page={{ $randomNumber(1, 100) }}&pageSize=20"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+
+  # 场景5: 获取墓园详情
+  - name: "获取墓园详情"
+    weight: 10
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "admin"
+            password: "admin123"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      - get:
+          url: "/api/cemeteries/1"
+          headers:
+            Authorization: "Bearer {{ authToken }}"
+
+  # 场景6: 获取支付统计
+  - name: "获取支付统计"
+    weight: 10
+    flow:
+      - post:
+          url: "/api/auth/login"
+          json:
+            username: "admin"
+            password: "admin123"
+          capture:
+            - json: "$.token"
+              as: "authToken"
+      - get:
+          url: "/api/payments/statistics"
+          headers:
+            Authorization: "Bearer {{ authToken }}"

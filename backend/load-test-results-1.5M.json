@@ -1,0 +1,522 @@
+{
+  "aggregate": {
+    "counters": {
+      "vusers.created_by_name.获取订单列表": 1437,
+      "vusers.created": 7350,
+      "http.requests": 7350,
+      "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 7350,
+      "errors.ECONNREFUSED": 7350,
+      "vusers.failed": 7350,
+      "vusers.created_by_name.获取墓园详情": 715,
+      "vusers.created_by_name.获取客户列表": 1421,
+      "vusers.created_by_name.获取支付统计": 759,
+      "vusers.created_by_name.用户登录": 779,
+      "vusers.created_by_name.获取墓位列表": 2239
+    },
+    "rates": {
+      "http.request_rate": 45
+    },
+    "firstCounterAt": 1763975248317,
+    "lastCounterAt": 1763975428200,
+    "firstMetricAt": 1763975248317,
+    "lastMetricAt": 1763975428200,
+    "period": 1763975420000,
+    "summaries": {},
+    "histograms": {}
+  },
+  "intermediate": [
+    {
+      "counters": {
+        "vusers.created_by_name.获取订单列表": 3,
+        "vusers.created": 10,
+        "http.requests": 10,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 10,
+        "errors.ECONNREFUSED": 10,
+        "vusers.failed": 10,
+        "vusers.created_by_name.获取墓园详情": 2,
+        "vusers.created_by_name.获取支付统计": 1,
+        "vusers.created_by_name.获取墓位列表": 3,
+        "vusers.created_by_name.获取客户列表": 1
+      },
+      "rates": {
+        "http.request_rate": 10
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975248317,
+      "lastCounterAt": 1763975249570,
+      "firstMetricAt": 1763975248317,
+      "lastMetricAt": 1763975249570,
+      "period": "1763975240000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取客户列表": 8,
+        "vusers.created": 50,
+        "http.requests": 50,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 50,
+        "errors.ECONNREFUSED": 50,
+        "vusers.failed": 50,
+        "vusers.created_by_name.获取支付统计": 5,
+        "vusers.created_by_name.用户登录": 8,
+        "vusers.created_by_name.获取墓位列表": 17,
+        "vusers.created_by_name.获取墓园详情": 5,
+        "vusers.created_by_name.获取订单列表": 7
+      },
+      "rates": {
+        "http.request_rate": 5
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975250316,
+      "lastCounterAt": 1763975259567,
+      "firstMetricAt": 1763975250316,
+      "lastMetricAt": 1763975259567,
+      "period": "1763975250000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.用户登录": 7,
+        "vusers.created": 50,
+        "http.requests": 50,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 50,
+        "errors.ECONNREFUSED": 50,
+        "vusers.failed": 50,
+        "vusers.created_by_name.获取客户列表": 11,
+        "vusers.created_by_name.获取支付统计": 7,
+        "vusers.created_by_name.获取墓位列表": 14,
+        "vusers.created_by_name.获取订单列表": 7,
+        "vusers.created_by_name.获取墓园详情": 4
+      },
+      "rates": {
+        "http.request_rate": 5
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975260316,
+      "lastCounterAt": 1763975269566,
+      "firstMetricAt": 1763975260316,
+      "lastMetricAt": 1763975269566,
+      "period": "1763975260000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取墓位列表": 17,
+        "vusers.created": 79,
+        "http.requests": 79,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 79,
+        "errors.ECONNREFUSED": 79,
+        "vusers.failed": 79,
+        "vusers.created_by_name.用户登录": 6,
+        "vusers.created_by_name.获取订单列表": 25,
+        "vusers.created_by_name.获取客户列表": 14,
+        "vusers.created_by_name.获取墓园详情": 6,
+        "vusers.created_by_name.获取支付统计": 11
+      },
+      "rates": {
+        "http.request_rate": 21
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975270316,
+      "lastCounterAt": 1763975279952,
+      "firstMetricAt": 1763975270316,
+      "lastMetricAt": 1763975279952,
+      "period": "1763975270000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取客户列表": 44,
+        "vusers.created": 200,
+        "http.requests": 200,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 200,
+        "errors.ECONNREFUSED": 200,
+        "vusers.failed": 200,
+        "vusers.created_by_name.获取墓园详情": 22,
+        "vusers.created_by_name.获取订单列表": 39,
+        "vusers.created_by_name.获取墓位列表": 56,
+        "vusers.created_by_name.用户登录": 21,
+        "vusers.created_by_name.获取支付统计": 18
+      },
+      "rates": {
+        "http.request_rate": 20
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975280003,
+      "lastCounterAt": 1763975289950,
+      "firstMetricAt": 1763975280003,
+      "lastMetricAt": 1763975289950,
+      "period": "1763975280000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取墓园详情": 22,
+        "vusers.created": 200,
+        "http.requests": 200,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 200,
+        "errors.ECONNREFUSED": 200,
+        "vusers.failed": 200,
+        "vusers.created_by_name.获取支付统计": 18,
+        "vusers.created_by_name.获取订单列表": 42,
+        "vusers.created_by_name.用户登录": 11,
+        "vusers.created_by_name.获取墓位列表": 66,
+        "vusers.created_by_name.获取客户列表": 41
+      },
+      "rates": {
+        "http.request_rate": 20
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975290003,
+      "lastCounterAt": 1763975299951,
+      "firstMetricAt": 1763975290003,
+      "lastMetricAt": 1763975299951,
+      "period": "1763975290000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取客户列表": 41,
+        "vusers.created": 200,
+        "http.requests": 200,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 200,
+        "errors.ECONNREFUSED": 200,
+        "vusers.failed": 200,
+        "vusers.created_by_name.获取墓位列表": 65,
+        "vusers.created_by_name.获取订单列表": 30,
+        "vusers.created_by_name.获取支付统计": 23,
+        "vusers.created_by_name.获取墓园详情": 22,
+        "vusers.created_by_name.用户登录": 19
+      },
+      "rates": {
+        "http.request_rate": 20
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975300003,
+      "lastCounterAt": 1763975309951,
+      "firstMetricAt": 1763975300003,
+      "lastMetricAt": 1763975309951,
+      "period": "1763975300000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取客户列表": 35,
+        "vusers.created": 200,
+        "http.requests": 200,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 200,
+        "errors.ECONNREFUSED": 200,
+        "vusers.failed": 200,
+        "vusers.created_by_name.获取墓位列表": 56,
+        "vusers.created_by_name.获取订单列表": 36,
+        "vusers.created_by_name.用户登录": 28,
+        "vusers.created_by_name.获取墓园详情": 24,
+        "vusers.created_by_name.获取支付统计": 21
+      },
+      "rates": {
+        "http.request_rate": 20
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975310003,
+      "lastCounterAt": 1763975319950,
+      "firstMetricAt": 1763975310003,
+      "lastMetricAt": 1763975319950,
+      "period": "1763975310000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取客户列表": 39,
+        "vusers.created": 200,
+        "http.requests": 200,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 200,
+        "errors.ECONNREFUSED": 200,
+        "vusers.failed": 200,
+        "vusers.created_by_name.获取订单列表": 38,
+        "vusers.created_by_name.获取墓园详情": 21,
+        "vusers.created_by_name.获取墓位列表": 64,
+        "vusers.created_by_name.用户登录": 26,
+        "vusers.created_by_name.获取支付统计": 12
+      },
+      "rates": {
+        "http.request_rate": 20
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975320003,
+      "lastCounterAt": 1763975329950,
+      "firstMetricAt": 1763975320003,
+      "lastMetricAt": 1763975329950,
+      "period": "1763975320000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取墓位列表": 71,
+        "vusers.created": 266,
+        "http.requests": 266,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 266,
+        "errors.ECONNREFUSED": 266,
+        "vusers.failed": 266,
+        "vusers.created_by_name.获取支付统计": 28,
+        "vusers.created_by_name.获取墓园详情": 33,
+        "vusers.created_by_name.获取客户列表": 68,
+        "vusers.created_by_name.获取订单列表": 44,
+        "vusers.created_by_name.用户登录": 22
+      },
+      "rates": {
+        "http.request_rate": 31
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975330003,
+      "lastCounterAt": 1763975339974,
+      "firstMetricAt": 1763975330003,
+      "lastMetricAt": 1763975339974,
+      "period": "1763975330000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取订单列表": 94,
+        "vusers.created": 500,
+        "http.requests": 500,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 500,
+        "errors.ECONNREFUSED": 500,
+        "vusers.failed": 500,
+        "vusers.created_by_name.获取墓位列表": 171,
+        "vusers.created_by_name.获取客户列表": 88,
+        "vusers.created_by_name.获取墓园详情": 41,
+        "vusers.created_by_name.获取支付统计": 51,
+        "vusers.created_by_name.用户登录": 55
+      },
+      "rates": {
+        "http.request_rate": 50
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975340004,
+      "lastCounterAt": 1763975349975,
+      "firstMetricAt": 1763975340004,
+      "lastMetricAt": 1763975349975,
+      "period": "1763975340000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取订单列表": 116,
+        "vusers.created": 500,
+        "http.requests": 500,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 500,
+        "errors.ECONNREFUSED": 500,
+        "vusers.failed": 500,
+        "vusers.created_by_name.获取墓位列表": 141,
+        "vusers.created_by_name.用户登录": 56,
+        "vusers.created_by_name.获取支付统计": 46,
+        "vusers.created_by_name.获取墓园详情": 52,
+        "vusers.created_by_name.获取客户列表": 89
+      },
+      "rates": {
+        "http.request_rate": 50
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975350004,
+      "lastCounterAt": 1763975359974,
+      "firstMetricAt": 1763975350004,
+      "lastMetricAt": 1763975359974,
+      "period": "1763975350000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取支付统计": 51,
+        "vusers.created": 500,
+        "http.requests": 500,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 500,
+        "errors.ECONNREFUSED": 500,
+        "vusers.failed": 500,
+        "vusers.created_by_name.获取订单列表": 113,
+        "vusers.created_by_name.获取客户列表": 100,
+        "vusers.created_by_name.用户登录": 48,
+        "vusers.created_by_name.获取墓园详情": 50,
+        "vusers.created_by_name.获取墓位列表": 138
+      },
+      "rates": {
+        "http.request_rate": 50
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975360004,
+      "lastCounterAt": 1763975369975,
+      "firstMetricAt": 1763975360004,
+      "lastMetricAt": 1763975369975,
+      "period": "1763975360000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取客户列表": 99,
+        "vusers.created": 500,
+        "http.requests": 500,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 500,
+        "errors.ECONNREFUSED": 500,
+        "vusers.failed": 500,
+        "vusers.created_by_name.获取订单列表": 83,
+        "vusers.created_by_name.获取墓位列表": 143,
+        "vusers.created_by_name.用户登录": 53,
+        "vusers.created_by_name.获取支付统计": 63,
+        "vusers.created_by_name.获取墓园详情": 59
+      },
+      "rates": {
+        "http.request_rate": 50
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975370004,
+      "lastCounterAt": 1763975379974,
+      "firstMetricAt": 1763975370004,
+      "lastMetricAt": 1763975379974,
+      "period": "1763975370000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取支付统计": 50,
+        "vusers.created": 500,
+        "http.requests": 500,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 500,
+        "errors.ECONNREFUSED": 500,
+        "vusers.failed": 500,
+        "vusers.created_by_name.用户登录": 54,
+        "vusers.created_by_name.获取墓位列表": 161,
+        "vusers.created_by_name.获取客户列表": 98,
+        "vusers.created_by_name.获取订单列表": 97,
+        "vusers.created_by_name.获取墓园详情": 40
+      },
+      "rates": {
+        "http.request_rate": 50
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975380004,
+      "lastCounterAt": 1763975389974,
+      "firstMetricAt": 1763975380004,
+      "lastMetricAt": 1763975389974,
+      "period": "1763975380000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取订单列表": 123,
+        "vusers.created": 613,
+        "http.requests": 613,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 613,
+        "errors.ECONNREFUSED": 613,
+        "vusers.failed": 613,
+        "vusers.created_by_name.获取墓位列表": 179,
+        "vusers.created_by_name.获取支付统计": 62,
+        "vusers.created_by_name.获取客户列表": 128,
+        "vusers.created_by_name.用户登录": 64,
+        "vusers.created_by_name.获取墓园详情": 57
+      },
+      "rates": {
+        "http.request_rate": 65
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975390004,
+      "lastCounterAt": 1763975399996,
+      "firstMetricAt": 1763975390004,
+      "lastMetricAt": 1763975399996,
+      "period": "1763975390000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取订单列表": 186,
+        "vusers.created": 1000,
+        "http.requests": 1000,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 1000,
+        "errors.ECONNREFUSED": 1000,
+        "vusers.failed": 1000,
+        "vusers.created_by_name.获取支付统计": 106,
+        "vusers.created_by_name.获取客户列表": 184,
+        "vusers.created_by_name.获取墓园详情": 96,
+        "vusers.created_by_name.用户登录": 108,
+        "vusers.created_by_name.获取墓位列表": 320
+      },
+      "rates": {
+        "http.request_rate": 100
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975400012,
+      "lastCounterAt": 1763975409997,
+      "firstMetricAt": 1763975400012,
+      "lastMetricAt": 1763975409997,
+      "period": "1763975400000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取订单列表": 195,
+        "vusers.created": 1000,
+        "http.requests": 1000,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 1000,
+        "errors.ECONNREFUSED": 1000,
+        "vusers.failed": 1000,
+        "vusers.created_by_name.用户登录": 112,
+        "vusers.created_by_name.获取客户列表": 183,
+        "vusers.created_by_name.获取墓位列表": 312,
+        "vusers.created_by_name.获取支付统计": 102,
+        "vusers.created_by_name.获取墓园详情": 96
+      },
+      "rates": {
+        "http.request_rate": 100
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975410012,
+      "lastCounterAt": 1763975419997,
+      "firstMetricAt": 1763975410012,
+      "lastMetricAt": 1763975419997,
+      "period": "1763975410000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.获取墓园详情": 63,
+        "vusers.created": 782,
+        "http.requests": 782,
+        "plugins.metrics-by-endpoint./api/auth/login.errors.ECONNREFUSED": 782,
+        "errors.ECONNREFUSED": 782,
+        "vusers.failed": 782,
+        "vusers.created_by_name.获取墓位列表": 245,
+        "vusers.created_by_name.获取订单列表": 159,
+        "vusers.created_by_name.获取客户列表": 150,
+        "vusers.created_by_name.获取支付统计": 84,
+        "vusers.created_by_name.用户登录": 81
+      },
+      "rates": {
+        "http.request_rate": 100
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1763975420012,
+      "lastCounterAt": 1763975428200,
+      "firstMetricAt": 1763975420012,
+      "lastMetricAt": 1763975428200,
+      "period": "1763975420000",
+      "summaries": {},
+      "histograms": {}
+    }
+  ]
+}

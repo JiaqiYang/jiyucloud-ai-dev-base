@@ -1,0 +1,4 @@
+/* Remove default Vite styles that conflict with Ant Design Layout */
+#app {
+  height: 100%;
+}
